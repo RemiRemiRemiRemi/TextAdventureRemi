@@ -33,7 +33,10 @@ public class TextAdventure
 
     // get user input and go to the appropriate zone based on their input
     // ADD CODE HERE
+    input = inScanner.nextLine();
 
+    if(input.equals("pond"));
+    
   }
 
   private void enterZone1()
