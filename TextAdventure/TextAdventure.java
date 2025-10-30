@@ -8,7 +8,7 @@ public class TextAdventure
 
   public TextAdventure()
   {
-    console = new FancyConsole("Great Text Adventure!", 600, 600);
+    console = new FancyConsole("Great Text Adventure!", 1200, 600);
     inScanner = new Scanner(System.in);
 
     // feel free to change the player's starting values
@@ -27,9 +27,9 @@ public class TextAdventure
 
     // Change ourHero's name
     // ADD CODE HERE
-    
+    ourHero.changeName(input);
     // describe the starting situation. Feel free to change this
-    System.out.println("You wake up to find yourself on the edge of a shadowy forest with the sun nearly set. \nYou see what looks like a city in the distance. \nWhat would you like to do? \ncity: go towards the city\nforest: turn around and re-enter the forest\nnap: go back to sleep\n" + ourHero.getName() + ": ");
+    System.out.println("You suddenly open your eyes to a vast world of bright colors and big fluffy clouds, and realize that you are in the sky. \nYou look around in extreme panic, and see several prominent landmarks around you as you turn your head repeatedly in shock with your eyes wide open. \nWhere will you go first? \npond: go towards the pond with shimmering water\npalace: run frantically towards the palace which may have people that could help you\nbreakdown: fall on your knees and scream\n" + ourHero.getName() + ": ");
 
     // get user input and go to the appropriate zone based on their input
     // ADD CODE HERE
