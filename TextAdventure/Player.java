@@ -10,6 +10,7 @@ public class Player
   public Player(String playerName, int startingHealth, double startingGold)
   {
     // ADD CODE HERE
+
   }
 
   public String getName()
@@ -20,6 +21,8 @@ public class Player
   public void changeName(String newName)
   {
     // ADD CODE HERE
+    name = newName;
+    
   }
 
   public int getHealth()
