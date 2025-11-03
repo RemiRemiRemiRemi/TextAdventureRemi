@@ -43,6 +43,7 @@ public class Player
   public void setGold(double newAmount)
   {
     // ADD CODE HERE
+    gold = newAmount;
   }
 
   public int getMonstersDefeated()

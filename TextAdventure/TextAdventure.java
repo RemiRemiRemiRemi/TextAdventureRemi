@@ -12,7 +12,7 @@ public class TextAdventure
     inScanner = new Scanner(System.in);
 
     // feel free to change the player's starting values
-    ourHero = new Player("Bob", 100, 0);
+    ourHero = new Player("Player", 100, 0);
   }
 
   public void play()
@@ -56,7 +56,7 @@ public class TextAdventure
     // describe the area/situation to the user. 
     // Give them options for choices.
     // ADD CODE HERE
-    System.out.println("Not knowing how to think of the situation, you make your way to the pond. As you lean over the surface of the water, your reflection stares into your soul, making you remember the dark reality that you came from. \nWhat now? \npalace: make your way back to the palace that you saw earlier \njump: jump into the water of the pond\n" + ourHero.getName() + ": ");
+    System.out.println("Not knowing how to think of the situation, you make your way to the pond. As you lean over the surface of the water, your reflection stares into your soul, making you remember the dark reality that you came from. \nWhat now? \npalace: make your way back to the palace that you saw earlier \njump: jump into the water of the pond (cannot jump while holding wondrous star)\n" + ourHero.getName() + ": ");
     // Take action or go to another zone based on their choice
     // ADD CODE HERE
 
@@ -65,7 +65,7 @@ public class TextAdventure
     if(input.equals("palace")){
     enterZone2();
   }
-    if(input.equals("jump")){
+    if(input.equals("jump") && ourHero.getGold() == 0){ //gold is the wondrous star
     enterZone4();
   }
   }
@@ -104,7 +104,9 @@ public class TextAdventure
     // ADD CODE HERE
     String input = inScanner.nextLine();
     if(input.equals("rest")){
-    //enterZone8();
+    System.out.println("You lie down on the pink clouds, and your vision slowly gets blurrier... It seems like you want to stay in this area forever, and after a long while, you never return back to reality");
+    System.out.println("*bad ending*");
+    gameEnd();
   }
     if(input.equals("pond")){
     enterZone1();
@@ -131,7 +133,7 @@ public class TextAdventure
     enterZone1();
   }
     if(input.equals("down")){
-    //enterZone7();
+    enterZone7();
   }
   }
 
@@ -143,7 +145,7 @@ public class TextAdventure
     // describe the area/situation to the user. 
     // Give them options for choices.
     // ADD CODE HERE
-    System.out.println("You walk through the splendiferous halls of the palace until you find the throne room. The room is covered in beautiful star shapes, but there is no one here. However, there is a strange slot on the wall behind the throne that a special object could fit into... \nWhere to now? \nunlock: try to fit an item into the slot on the wall (requires special item) \npond: go to the pond from before \nentrance: return to the entrance of the palace\n" + ourHero.getName() + ": ");
+    System.out.println("You walk through the splendiferous halls of the palace until you find the throne room. The room is covered in beautiful star shapes, but there is no one here. However, there is a strange slot on the wall behind the throne that a special star-shaped object could fit into... \nWhere to now? \nunlock: try to fit an item into the slot on the wall (requires wondrous star) \npond: go to the pond from before \nentrance: return to the entrance of the palace\n" + ourHero.getName() + ": ");
     // Take action or go to another zone based on their choice
     // ADD CODE HERE
         String input = inScanner.nextLine();
@@ -166,11 +168,41 @@ public class TextAdventure
     // describe the area/situation to the user. 
     // Give them options for choices.
     // ADD CODE HERE
-    System.out.println("After walking for a long time, you eventually find the grand, royal bedroom. The thick sheets of the bed draw you in, and your vision slowly fades as you start to forget about what you are doing, or where you came from...");
+    System.out.println("After walking for a long time, you eventually find the grand, royal bedroom. The thick sheets of the bed draw you in, and your vision slowly becomes blurrier... You start to forget about what you are doing, or where you came from, and you never get back to reality.");
     // Take action or go to another zone based on their choice
+    System.out.println("*bad ending*");
+    gameEnd();
     // ADD CODE HERE
     
   }
+
+  private void enterZone7()
+  {
+    // change image
+    // ADD CODE HERE
+    console.setImage("ocean.jpg");
+    // describe the area/situation to the user. 
+    // Give them options for choices.
+    // ADD CODE HERE
+    System.out.println("You swim deeper into the pond, and grab the object at the bottom. It is a heavy star-shaped object. (obtained wondrous star)");
+    // Take action or go to another zone based on their choice
+    // ADD CODE HERE
+    ourHero.setGold(1);
+    System.out.println("You can now either return to the surface of the pond, or stay longer in the warm embrace of the soothing water \nreturn: go back to the surface \ndive: go even deeper\n" + ourHero.getName() + ": ");
+    String input = inScanner.nextLine();
+
+    if(input.equals("return")){
+      enterZone1();
+    }
+      if(input.equals("dive")){
+        System.out.println("As you make your way deeper into the pond, the warmth of the water comforts you, and your vision becomes blurrier... Wanting to stay here longer, you never return to reality.");
+        System.out.println("*bad ending*");
+        gameEnd();
+      }
+  }
+
+
+
 
   private void gameEnd()
   {
