@@ -99,24 +99,39 @@ public class TextAdventure
     // describe the area/situation to the user. 
     // Give them options for choices.
     // ADD CODE HERE
-    System.out.println();
+    System.out.println("You run to the empty field of clouds, and see a small pink area in the field that looks like it would be a wonderful area to rest in... \nWhich area will you go to next? \nrest: rest in the cozy-looking area \npalace: run to the palace you saw earlier \npond: make your way to the pond from before\n" + ourHero.getName() + ": ");
     // Take action or go to another zone based on their choice
     // ADD CODE HERE
-    
+    String input = inScanner.nextLine();
+    if(input.equals("rest")){
+    //enterZone8();
+  }
+    if(input.equals("pond")){
+    enterZone1();
+  }
+    if(input.equals("palace")){
+    enterZone2();
+  }
   }
 
   private void enterZone4()
   {
     // change image
     // ADD CODE HERE
-
     // describe the area/situation to the user. 
     // Give them options for choices.
     // ADD CODE HERE
-
+    System.out.println("Mesmerized by the reflective surface of the lake, you plunge into the water. The seemingly small pond is actually incredibly deep, and its warm water invites you in to go deeper. You see a strange object at the bottom. \nWhere will you swim? \nup: swim back to the surface of the pond \ndown: grab the object at the bottom of the lake \n" + ourHero.getName() + ": ");
     // Take action or go to another zone based on their choice
     // ADD CODE HERE
-    
+    String input = inScanner.nextLine();
+    if(input.equals("up")){
+    System.out.println("You make your way back to the surface...");
+    enterZone1();
+  }
+    if(input.equals("down")){
+    //enterZone7();
+  }
   }
 
   private void enterZone5()
