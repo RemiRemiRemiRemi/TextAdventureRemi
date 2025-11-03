@@ -19,7 +19,7 @@ public class TextAdventure
   {
     String input;
     // start of adventure. You can change this if you like
-    console.setImage("distantcity.jpg");
+    console.setImage("pinkclouds.png");
 
     // ask the user for their name.
     System.out.println("What is your name?\n");
@@ -52,7 +52,7 @@ public class TextAdventure
   {
     // change image
     // ADD CODE HERE
-
+    console.setImage("animals.jpg");
     // describe the area/situation to the user. 
     // Give them options for choices.
     // ADD CODE HERE
@@ -74,7 +74,7 @@ public class TextAdventure
   {
     // change image
     // ADD CODE HERE
-
+    console.setImage("forest.jpg");
     // describe the area/situation to the user. 
     // Give them options for choices.
     // ADD CODE HERE
@@ -95,7 +95,7 @@ public class TextAdventure
   {
     // change image
     // ADD CODE HERE
-
+    console.setImage("graveyard.jpg");
     // describe the area/situation to the user. 
     // Give them options for choices.
     // ADD CODE HERE
@@ -118,10 +118,11 @@ public class TextAdventure
   {
     // change image
     // ADD CODE HERE
+    console.setImage("mountains.png");
     // describe the area/situation to the user. 
     // Give them options for choices.
     // ADD CODE HERE
-    System.out.println("Mesmerized by the reflective surface of the lake, you plunge into the water. The seemingly small pond is actually incredibly deep, and its warm water invites you in to go deeper. You see a strange object at the bottom. \nWhere will you swim? \nup: swim back to the surface of the pond \ndown: grab the object at the bottom of the lake \n" + ourHero.getName() + ": ");
+    System.out.println("Mesmerized by the reflective surface of the pond, you plunge into the water. The seemingly small pond is actually incredibly deep, and its warm water invites you in to go deeper. You see a strange object at the bottom. \nWhere will you swim? \nup: swim back to the surface of the pond \ndown: grab the object at the bottom of the lake \n" + ourHero.getName() + ": ");
     // Take action or go to another zone based on their choice
     // ADD CODE HERE
     String input = inScanner.nextLine();
@@ -138,25 +139,34 @@ public class TextAdventure
   {
     // change image
     // ADD CODE HERE
-
+    console.setImage("ocean.jpg");
     // describe the area/situation to the user. 
     // Give them options for choices.
     // ADD CODE HERE
-
+    System.out.println("You walk through the splendiferous halls of the palace until you find the throne room. The room is covered in beautiful star shapes, but there is no one here. However, there is a strange slot on the wall behind the throne that a special object could fit into... \nWhere to now? \nunlock: try to fit an item into the slot on the wall (requires special item) \npond: go to the pond from before \nentrance: return to the entrance of the palace\n" + ourHero.getName() + ": ");
     // Take action or go to another zone based on their choice
     // ADD CODE HERE
-    
+        String input = inScanner.nextLine();
+    if(input.equals("unlock")){
+    //enterZone9();
+  }
+    if(input.equals("pond")){
+    enterZone1();
+  }
+    if(input.equals("entrance")){
+    enterZone2();
+  }
   }
 
   private void enterZone6()
   {
     // change image
     // ADD CODE HERE
-
+    console.setImage("ocean.jpg");
     // describe the area/situation to the user. 
     // Give them options for choices.
     // ADD CODE HERE
-
+    System.out.println("After walking for a long time, you eventually find the grand, royal bedroom. The thick sheets of the bed draw you in, and your vision slowly fades as you start to forget about what you are doing, or where you came from...");
     // Take action or go to another zone based on their choice
     // ADD CODE HERE
     
