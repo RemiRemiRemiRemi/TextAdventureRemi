@@ -427,7 +427,7 @@ public class TextAdventure
 
   }
   if(brokennessHP <= 0 && ourHero.getHealth() > 0){
-  System.out.println("Victory!");
+  System.out.println("-= Victory! =-");
   enterZone13();
   }
   }
