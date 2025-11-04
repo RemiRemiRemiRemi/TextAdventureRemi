@@ -10,7 +10,7 @@ public class Player
   public Player(String playerName, int startingHealth, double startingGold)
   {
     // ADD CODE HERE
-
+    startingGold = gold;
   }
 
   public String getName()
@@ -33,6 +33,7 @@ public class Player
   public void setHealth(int newHealth)
   {
     // ADD CODE HERE
+    health = newHealth;
   }
 
   public double getGold()
