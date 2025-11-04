@@ -1,3 +1,5 @@
+//Remi-Laurent Guy - Text Adventure
+
 import java.util.*;
 
 public class TextAdventure 
